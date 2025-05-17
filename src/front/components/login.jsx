@@ -2,12 +2,12 @@ import { useState } from "react"
 import userServices from "../servicios/userServices"
 import useGlobalReducer from "../hooks/useGlobalReducer"
 
-
 useState
 
-export const Register = ()=>{
+export const Login = ()=>{
 
-const {store, dispatch} = useGlobalReducer()
+    const {store, dispatch} = useGlobalReducer()
+
 const [formData, setFormData] = useState({
     email:"",
     password:""
@@ -20,7 +20,7 @@ const handleChange = e =>{
 const handleSubmit = e =>{
     e.preventDefault();
     console.log(formData)
-    userServices.register(formData).then(data => console.log(data))
+    userServices.login(formData).then(data => console.log(data))
 }
 
 
